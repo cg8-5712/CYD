@@ -74,11 +74,15 @@ void printLine(const char* text) {
 
 void setup() {
   Serial.begin(115200);
-  tft.begin();
-  tft.fillScreen(TFT_BLACK);
-  tft.setTextColor(TFT_WHITE, TFT_BLACK);
+  delay(500);  // 稍微延时，确保 ESP32 完全启动
 
-  // ⚠️ 这里设置中文字体
+  // 初始化显示
+  tft.begin();
+  delay(500);  // 增加额外延时，确保显示屏初始化稳定
+  tft.fillScreen(TFT_BLACK);  // 清屏
+  delay(100);  // 再增加一些延迟
+
+  tft.setTextColor(TFT_WHITE, TFT_BLACK);
   tft.setFont(&cn_font);
 
   String deviceName = "ESP32_BLE_Scan";
@@ -124,4 +128,5 @@ void loop() {
 
   printLine("===== 扫描完成 =====");
   delay(5000);
+  tft.fillScreen(TFT_BLACK);  // 每次循环结束后清屏
 }
