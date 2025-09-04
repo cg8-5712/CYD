@@ -180,7 +180,7 @@ platform = espressif32
 board = esp32dev
 framework = arduino
 monitor_speed = 115200
-upload_port = /dev/cu.usbserial-14220
+upload_port = /dev/cu.usbserial-XXXX # For macOS/Linux, replace with your port
 ```
 
 ## 项目文件说明
