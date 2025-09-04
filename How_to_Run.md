@@ -24,7 +24,7 @@ python3 --version
 为项目创建独立的Python环境：
 
 ```bash
-cd /Users/esap/Desktop/Github/NaviControl-ESP32
+cd <你的项目路径>
 python3 -m venv .venv
 ```
 
