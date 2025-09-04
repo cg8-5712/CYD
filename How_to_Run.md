@@ -183,10 +183,46 @@ monitor_speed = 115200
 upload_port = /dev/cu.usbserial-XXXX # For macOS/Linux, replace with your port
 ```
 
+### 5. Clangd与PlatformIO冲突（IntelliSense不工作）
+
+如果您遇到以下错误：
+
+```text
+Conflicted extensions with IntelliSense service were detected (clangd). Code-completion, linting and navigation will not work properly. Please disable or uninstall them.
+```
+
+这通常是因为PlatformIO IDE扩展与Clangd扩展冲突导致IntelliSense无法正常工作。
+
+**解决方案：**
+
+1. **初始化VS Code项目配置：**
+
+   ```bash
+   pio init --ide vscode
+   ```
+
+2. **生成编译数据库：**
+
+   ```bash
+   pio run -t compiledb
+   ```
+
+3. **重启VS Code：**
+   - 完全关闭VS Code
+   - 重新打开项目
+
+4. **验证修复：**
+   - `compile_commands.json` 文件会出现在项目根目录
+   - IntelliSense现在应该正常工作
+   - 代码补全、语法检查和导航功能恢复正常
+
+**注意：** 这个解决方案允许PlatformIO和Clangd共存，同时保持IntelliSense功能正常工作。
+
 ## 项目文件说明
 
 - **platformio.ini**: 项目配置文件，定义平台、板子和框架
 - **main.ino**: 主程序文件（Arduino格式）
+- **compile_commands.json**: 编译数据库文件（用于IntelliSense）
 - **.pio**: PlatformIO生成的构建文件目录
 - **.venv**: Python虚拟环境目录
 
@@ -199,4 +235,4 @@ upload_port = /dev/cu.usbserial-XXXX # For macOS/Linux, replace with your port
 3. 在platformio.ini中添加库依赖
 4. 集成传感器、显示屏等硬件
 
-如果遇到任何问题，请检查PlatformIO的官方文档：https://docs.platformio.org/
+如果遇到任何问题，请检查PlatformIO的官方文档：<https://docs.platformio.org/>
