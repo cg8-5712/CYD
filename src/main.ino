@@ -1,12 +1,16 @@
 #include <Arduino.h>
 
+// Define constants for pin and delay to avoid magic numbers
+const int LED_PIN = 16;
+const int BLINK_DELAY_MS = 500;
+
 void setup() {
-  pinMode(16, OUTPUT);
+  pinMode(LED_PIN, OUTPUT);
 }
 
 void loop() {
-  digitalWrite(16, HIGH);
-  delay(500);
-  digitalWrite(16, LOW);
-  delay(500);
+  digitalWrite(LED_PIN, HIGH);
+  delay(BLINK_DELAY_MS);
+  digitalWrite(LED_PIN, LOW);
+  delay(BLINK_DELAY_MS);
 }
