@@ -1,0 +1,3 @@
+[submodule "ble-screen-list-idf/ble_lvgl/components/lvgl_esp32_drivers"]
+	path = ble-screen-list-idf/ble_lvgl/components/lvgl_esp32_drivers
+	url = https://gh-proxy.com/github.com/lvgl/lvgl_esp32_drivers.git

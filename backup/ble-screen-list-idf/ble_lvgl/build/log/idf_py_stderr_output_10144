@@ -1,0 +1,11 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=c:\Users\Administrator\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe -DESP_PLATFORM=1 -DSDKCONFIG='f:\bian\arduinoproj\cyd\ble-screen-list-idf\ble_lvgl\sdkconfig' -DCCACHE_ENABLE=1 F:\bian\arduinoproj\cyd\ble-screen-list-idf\ble_lvgl
+CMake Error at E:/software/esp-idf/v5.5.1/esp-idf/tools/cmake/build.cmake:328 (message):
+  Failed to resolve component 'lvgl' required by component
+  'lvgl_esp32_drivers': unknown name.
+Call Stack (most recent call first):
+  E:/software/esp-idf/v5.5.1/esp-idf/tools/cmake/build.cmake:371 (__build_resolve_and_add_req)
+  E:/software/esp-idf/v5.5.1/esp-idf/tools/cmake/build.cmake:685 (__build_expand_requirements)
+  E:/software/esp-idf/v5.5.1/esp-idf/tools/cmake/project.cmake:740 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+
