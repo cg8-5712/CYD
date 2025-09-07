@@ -1,0 +1,14 @@
+idf_component_register(
+    SRCS 
+        "gui_guider.c"
+        "events_init.c"
+        "custom.c"
+    INCLUDE_DIRS 
+        "."
+        "guider_customer_fonts"
+        "guider_fonts"
+        "images"
+    REQUIRES 
+        lvgl__lvgl
+        esp_lvgl_port
+)
